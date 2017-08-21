@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Paper from 'material-ui/Paper';
 
 import jsonData from '../../jsondata';
 
@@ -29,7 +30,9 @@ export default class Books extends React.Component {
                         return (
                             <div key={book.id}>
                                 <Link to={`/bookDiscription/${book.id}`} >
-                                    <img src={book.src} style={style.image} />
+                                    <Paper>
+                                        <img src={book.src} style={style.image} />
+                                    </Paper>
                                 </Link>
                             </div>
                         )

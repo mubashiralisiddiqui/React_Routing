@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Paper from 'material-ui/Paper';
 
 import jsonData from '../../jsondata';
 
@@ -14,7 +15,6 @@ export default class BookDescription extends React.Component {
                 padding: "0px auto",
                 flexWrap: 'wrap',
                 justifyContent: 'flex-end',
-                border: "5px solid black",
             },
             image: {
                 width: "100px",
@@ -34,13 +34,14 @@ export default class BookDescription extends React.Component {
             <div>
                 <h1 style={{ textAlign: "center" }}>Programming Books </h1>
                 <div style={style.parent}>
-                    <figure>
-                        <img src={specificData.src} style={{ width: "50vh", height: "40vh" }} />
-                        <figcaption>{specificData.description}</figcaption>
-                    </figure>
+                    <Paper zDepth={1} >
+                        <figure>
+                            <img src={specificData.src} style={{ width: "50vh", height: "40vh" }} />
+                            <figcaption>{specificData.description}</figcaption>
+                        </figure>
+                    </ Paper >
                     <p>{specificData.title} </p>
                     <p><a href={specificData.url}>more info</a> </p>
-
                 </div>
                 <Link to="/">More books</Link>
             </div>
